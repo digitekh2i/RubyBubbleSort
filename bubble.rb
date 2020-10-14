@@ -1,17 +1,46 @@
 
-def bubble_sort(arr) 
-  lengthofArr = arr.length - 1; 
+def bubble_sort(arr)
+  lengthofArr = arr.length - 1;
   loop do 
-    swap = false 
-    lengthofArr.times do |item|
-       if arr[item] > arr[item + 1] 
-        arr[item], arr[item + 1] = arr[item + 1], arr[item]
-         swap = true 
-        end 
-    end 
-    break if not swap
-  end 
-  puts arr 
-end 
+    swap = false
+     lengthofArr.times do |item|
+        if arr[item] > arr[item + 1] 
+          arr[item], arr[item + 1] = arr[item + 1], arr[item]
+          swap = true
+        end
+      end
+      break if not swap
+  end
+  puts arr   
+end
 
-bubble_sort([22, 25, 17, 5, 46, 1]) 
+
+arr = [49, 22, 1, 55, 104, 7]
+
+bubble_sort(arr)
+
+arr = ["hello", "hey", "hi"]
+
+def bubble_sort_by(arr)
+  lengthofArr = arr.length - 1;
+  loop do 
+    swap = false
+     lengthofArr.times do |item|
+      value = yield(arr[item], arr[item + 1])
+        if value >= 1 
+          arr[item], arr[item + 1] = arr[item + 1], arr[item]
+          swap = true
+        elsif value <= -1
+          break
+        else
+          break
+        end
+      end
+      break if not swap
+  end
+  puts arr
+end
+
+bubble_sort_by(arr) do |left, right|
+  left.length - right.length
+end
