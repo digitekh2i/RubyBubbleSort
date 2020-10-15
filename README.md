@@ -2,9 +2,6 @@
 
 > For the purpose of educational practical exhibition, In our first ruby project, we applied the Sorting algorithim concept known as Bubble Sort. as part of Microverse Technical curriculum. 
 
-![screenshot]()
-
-
 ## Built With
 
 - Ruby,
